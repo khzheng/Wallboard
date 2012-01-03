@@ -1,10 +1,12 @@
-Wallboard::Application.routes.draw do
-  matches '/login', :to => 'pages#login'
-  matches '/teamstats', :to =>'pages#teamstats'
+Wallboard::Application.routes.draw do  
+  get "users/new"
+  
+  match '/signup', :to =>'users#new'
+
+  match '/login', :to => 'pages#login'
+  match '/teamstats', :to =>'pages#teamstats'
   
   root :to => 'pages#home'
-
-  resources :users
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
